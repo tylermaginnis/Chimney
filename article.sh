@@ -60,9 +60,8 @@ for file in articles/*.html; do
         filename=$(basename "$file")
         
         # Create a link for the TOC
-        name=$(basename "$file" | sed 's/_/ /g')
-        link="<a href='articles/${filename}'>${name}</a><br>"
-
+        name=$(basename "$file" | sed 's/_/ /g' | sed 's/\.html$//')
+        link="<ahref ='articles/${filename}'>${name}</a><br>"
 
         
         # Append the link to the TOC content
