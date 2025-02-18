@@ -58,20 +58,11 @@ for file in articles/*.html; do
     if [ -f "$file" ]; then
         # Extract the filename without the path
         filename=$(basename "$file")
-
-        # Extract the date from the filename
-        date=$(basename "$file" | cut -d'_' -f1)
         
         # Create a link for the TOC
-        name=$(basename "$file" | cut -d'_' -f2- | sed 's/\.html$//' | tr '_' ' ')
-        # Split the name into words
-        IFS=' ' read -ra words <<< "$name"
-        # Check if the first word is "2nd"
-        if [[ "${words[0]}" == "2nd" ]]; then
-            # Keep the full text
-            name="$name"
-        fi
+        name=$(basename "$file" | sed 's/_/ /g')
         link="<a href='articles/${filename}'>${name}</a><br>"
+
 
         
         # Append the link to the TOC content
