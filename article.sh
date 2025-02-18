@@ -64,7 +64,15 @@ for file in articles/*.html; do
         
         # Create a link for the TOC
         name=$(basename "$file" | cut -d'_' -f2- | sed 's/\.html$//' | tr '_' ' ')
+        # Split the name into words
+        IFS=' ' read -ra words <<< "$name"
+        # Check if the first word is "2nd"
+        if [[ "${words[0]}" == "2nd" ]]; then
+            # Keep the full text
+            name="$name"
+        fi
         link="<a href='articles/${filename}'>${name}</a><br>"
+
         
         # Append the link to the TOC content
         toc_content="${toc_content}${link}"
