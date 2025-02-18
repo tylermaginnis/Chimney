@@ -18,7 +18,52 @@ header {
     color: #f8f8f8; /* Light off-white, like the inside of a clean chimney */
     padding: 1rem;
 }
+/* Style for the TOC section */
+#articles-toc {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
+
+
+/* Style for the TOC title */
+#articles-toc h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Style for the category headings */
+#articles-toc h3 {
+    color: #666;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for the unordered lists */
+#articles-toc ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Style for the list items */
+#articles-toc li {
+    margin-bottom: 5px;
+}
+
+/* Style for the TOC links */
+#articles-toc a {
+    color: black;
+    text-decoration:underline;
+    transition: color 0.3s ease;
+}
+
+#articles-toc a:hover {
+    color: #003399;
+}
 .text {
     padding-bottom: 1rem;
 }

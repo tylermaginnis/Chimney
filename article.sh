@@ -20,6 +20,8 @@ for file in unprocessed_articles/*.html; do
         new_content="${template//ARTICLE_TEMPLATE/${content}}"
 
         new_content=$(echo "$new_content" | sed 's/```html//g')
+        new_content=$(echo "$new_content" | sed 's/```//g')
+
 
         # Extract the filename without the path
         filename=$(basename "$file")
@@ -31,7 +33,8 @@ for file in unprocessed_articles/*.html; do
         date=$(basename "$file" | cut -d'_' -f1)
         
         # Create a link for the TOC
-        link="<a href='articles/${filename}'>${date}</a><br>"
+        name=$(basename "$file" | cut -d'_' -f2- | sed 's/\.html$//' | tr '_' ' ')
+        link="<a href='articles/${filename}'>${name}</a><br>"
         
         # Append the link to the TOC content
         toc_content="${toc_content}${link}"
