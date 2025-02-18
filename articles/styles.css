@@ -12,6 +12,149 @@ body {
     color: #333;
 }
 
+/* Article-specific styles */
+
+/* Article container */
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Article header */
+article header {
+    margin-bottom: 30px;
+}
+
+article header p {
+    color:white;
+}
+
+article h1 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 1em;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Table of Contents */
+nav[aria-label="Table of Contents"] {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+nav[aria-label="Table of Contents"] h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+nav[aria-label="Table of Contents"] ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav[aria-label="Table of Contents"] li {
+    margin-bottom: 5px;
+}
+
+nav[aria-label="Table of Contents"] a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+nav[aria-label="Table of Contents"] a:hover {
+    text-decoration: underline;
+}
+
+/* Article sections */
+article section {
+    margin-bottom: 40px;
+}
+
+article h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+article h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* FAQs */
+.faqs div[itemtype="https://schema.org/Question"] {
+    margin-bottom: 20px;
+}
+
+.faqs h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.faqs p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Case Study */
+.case-study p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Testimonials */
+.testimonials blockquote {
+    font-style: italic;
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    border-left: 3px solid #007bff;
+}
+
+.testimonials cite {
+    font-style: normal;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Article footer */
+article footer {
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+article footer p {
+    font-size: 0.9em;
+    color: white;;
+}
+
+
+article footer a {
+    color: white;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+article footer a:hover {
+    text-decoration: underline;
+}
 /* Header styles */
 header {
     background-color: #6a3d0f; /* Dark brown, reminiscent of chimney soot */

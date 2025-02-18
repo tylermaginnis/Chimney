@@ -9,8 +9,8 @@ toc_template=$(cat articles_toc_template.html)
 # Initialize an empty string to store the TOC content
 toc_content=""
 
-# Loop through all HTML files in the articles directory
-for file in articles/*.html; do
+# Loop through all HTML files in the unprocessed_articles directory
+for file in unprocessed_articles/*.html; do
     # Check if the file is a regular file (not a directory)
     if [ -f "$file" ]; then
         # Read the content of the file
@@ -18,15 +18,20 @@ for file in articles/*.html; do
         
         # Replace the {ARTICLE} token in the template with the content
         new_content="${template//ARTICLE_TEMPLATE/${content}}"
-        
-        # Overwrite the file with the new content
-        echo "$new_content" > "$file"
+
+        new_content=$(echo "$new_content" | sed 's/```html//g')
+
+        # Extract the filename without the path
+        filename=$(basename "$file")
+
+        # Save the new content in the articles directory
+        echo "$new_content" > "articles/${filename}"
         
         # Extract the date from the filename
         date=$(basename "$file" | cut -d'_' -f1)
         
         # Create a link for the TOC
-        link="<a href='${file}'>${date}</a><br>"
+        link="<a href='articles/${filename}'>${date}</a><br>"
         
         # Append the link to the TOC content
         toc_content="${toc_content}${link}"
